@@ -76,7 +76,7 @@ Java 还提供垃圾自动回收功能，虽说手动管理内存意味着自由
 
 ###  newFixedThreadPool
 
-![](https://upload-images.jianshu.io/upload_images/16034279-f06b1c24da63f29e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228111803637.png)
 
 这个线程池实现特点是核心线程数和最大线程数是一致的，然后  keepAliveTime 的时间是 0 ，队列是无界队列。
 
@@ -90,7 +90,7 @@ Java 还提供垃圾自动回收功能，虽说手动管理内存意味着自由
 
 ###  newWorkStealingPool
 
-![](https://upload-images.jianshu.io/upload_images/16034279-e5380b556193d972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228111823899.png)
 
 这个是1.8才有的，从代码可以看到返回的就是  ForkJoinPool，我们1.8用的并行流就是这个线程池。
 
@@ -106,7 +106,7 @@ Java 还提供垃圾自动回收功能，虽说手动管理内存意味着自由
 
 ### newSingleThreadExecutor
 
-![](https://upload-images.jianshu.io/upload_images/16034279-443eea8207058576.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112021332.png)
 
 这个线程池很有个性，一个线程池就一个线程，一个人一座城，配备的也是无界队列。
 
@@ -114,7 +114,7 @@ Java 还提供垃圾自动回收功能，虽说手动管理内存意味着自由
 
 ### newCachedThreadPool
 
-![](https://upload-images.jianshu.io/upload_images/16034279-0f866117b4c108e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112040752.png)
 
 这个线程池是急性子，核心线程数是 0 ，最大线程数看作无限，然后**任务队列是没有存储空间的**，简单理解成来个任务就必须找个线程接着，不然就阻塞了。
 
@@ -126,8 +126,8 @@ cached 意思就是会缓存之前执行过的线程，缓存时间是 60 秒，
 
 ### newScheduledThreadPool
 
-![](https://upload-images.jianshu.io/upload_images/16034279-82a49cfa97ed4aaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](https://upload-images.jianshu.io/upload_images/16034279-6a1479188ea32d78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112108085.png)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112123444.png)
 
 其实就是定时执行任务，重点就是那个延时队列。
 
@@ -205,11 +205,11 @@ CGLIB 基于ASM字节码生成工具，它是通过继承的方式来实现代�
 2. 然后利用 Proxy 根据目标类的类加载器、接口和切面类得到一个代理类。
 3. 代理类的逻辑就是把所有接口方法的调用转发到切面类的 invoke() 方法上，然后根据反射调用目标类的方法。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-1e203fe37d3d035c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112159415.png)
 
 再深一点点就是代理类会现在静态块中通过反射把所有方法都拿到存在静态变量中，我之前反编译看过代理类，我忙写了一下，大致长这样：
 
-![](https://upload-images.jianshu.io/upload_images/16034279-aabcee05190fbaa5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112223174.png)
 
 这一套下来 JDK 动态代理原理应该就很清晰了。
 
@@ -243,13 +243,13 @@ CGLIB 基于ASM字节码生成工具，它是通过继承的方式来实现代�
 
 像常见的：
 
-![](https://upload-images.jianshu.io/upload_images/16034279-5890c83b8eb88d7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image-20210228112243058](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112243058.png)
 
 就是给编译器用的，编译器编译的时候检查没问题就over了，class文件里面不会有 Override 这个标记。
 
 再比如 Spring 常见的 Autowired ，就是 RUNTIME 的，所以**在运行的时候可以通过反射得到注解的信息**，还能拿到标记的值 required 。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-9e5ac465b678a90a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112312107.png)
 
 所以注解就是一个标记，可以给编译器用、也能运行时候用。
 
@@ -317,7 +317,7 @@ Java 自身提供了 3 种类加载器：
 
 所以一般情况类加载会从应用程序类加载器委托给扩展类再委托给启动类，启动类找不到然后扩展类找，扩展类加载器找不到再应用程序类加载器找。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-e5a9f205044f4884.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112334820.png)
 
 
 **双亲委派模型不是一种强制性约束**，也就是你不这么做也不会报错怎样的，**它是一种JAVA设计者推荐使用类加载器的方式**。 
@@ -364,7 +364,7 @@ JDK(Java Development Kit) 可以视为 JRE 的超集，还提供了一些工具�
 
 工具其实还有很多，看看下面这个截图。
 
-![jdk/bin中部分工具截图](https://upload-images.jianshu.io/upload_images/16034279-0acbc8c46bd1fbd1.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112353953.png)
 
 更详细的可以去《深入理解虚拟机Java》第四章查看。
 
@@ -390,7 +390,7 @@ JDK(Java Development Kit) 可以视为 JRE 的超集，还提供了一些工具�
 
 所以**反序列化就是将字节序列格式转换成对象的过程**。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-f3aff21fa34c5ef3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112408826.png)
 
 我再扩展一下 Java 序列化。
 
@@ -398,7 +398,7 @@ JDK(Java Development Kit) 可以视为 JRE 的超集，还提供了一些工具�
 
 来看下源码就很清楚了，除了 String、数组和枚举之外，如果实现了这个接口就走`writeOrdinaryObject`，否则就序列化就抛错。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-f2ea4a314e5e3114.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112426413.png)
 
 > serialVersionUID 又有什么用？
 
@@ -420,7 +420,7 @@ JDK(Java Development Kit) 可以视为 JRE 的超集，还提供了一些工具�
 
 简单地说就是序列化之后存储的内容不包含静态变量的值，看下下面的代码就很清晰了。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-cde2cc4643892d48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112441786.png)
 
 ## 16.什么是不可变类？
 
@@ -438,7 +438,7 @@ JDK(Java Development Kit) 可以视为 JRE 的超集，还提供了一些工具�
 
 String 类用 final 修饰，表示无法被继承。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-548bb2282832bc36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112501169.png)
 
 String 本质是一个 char 数组，然后用 final 修饰，不过 final 限制不了数组内部的数据，所以这还不够。
 
@@ -446,7 +446,7 @@ String 本质是一个 char 数组，然后用 final 修饰，不过 final 限�
 
 当然还是有修改的需求，比如 replace 方法，所以这时候就需要返回一个新对象来作为结果。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-25ecf7384f3eb32f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112521363.png)
 
 总结一下就是私有化变量，然后不要暴露 set 方法，即使有修改的需求也是返回一个新对象。
 
@@ -460,7 +460,7 @@ JVM 内存有划分为栈和堆，局部变量和方法参数是在栈上分配�
 
 而对象所占的空间是在堆中开辟的，引用类型的变量存储对象在堆中地址来访问对象，所以传递的时候可以理解为把变量存储的地址给传递过去，因此引用类型也是值传递。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-422b4aad63a12474.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112539293.png)
 
 ## 18.泛型有什么用？泛型擦除是什么？
 
@@ -472,11 +472,11 @@ JVM 内存有划分为栈和堆，局部变量和方法参数是在栈上分配�
 
 不过这个擦除有个细节，我们来看下代码就很清晰了，代码如下：
 
-![](https://upload-images.jianshu.io/upload_images/16034279-49f51e7a5d5e7596.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112554862.png)
 
 然后我们再来看看编译后的 class 文件。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-0b58646d5c14fa53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image-20210228112610761](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112610761.png)
 
 可以看到 yess 是有类型信息的，所以在代码里写死的泛型类型是不会被擦除的！
 
@@ -499,13 +499,13 @@ Java 根据其生命周期的长短将**引用类型**又分为强引用、软�
 
 还有一点有关虚引用的需要提一下，之前看文章都说虚引用对 gc 回收不会有任何的影响，但是看 1.8 doc 上面说
 
-![](https://upload-images.jianshu.io/upload_images/16034279-c0f2703dd7b234d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112643135.png)
 
 > 简单翻译下就是：与软引用和弱引用不同，虚引用在排队时不会被垃圾回收器自动清除。通过**虚引用可访问的对象将保持这种状态，直到所有这些引用被清除或者它们本身变得不可访问**。
 
 简单的说就是被虚引用引用的对象不能被 gc，然而在 JDK9 又有个变更记录：
 
-![](https://upload-images.jianshu.io/upload_images/16034279-05447be17f77f843.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112702582.png)
 
 链接：https://bugs.openjdk.java.net/browse/JDK-8071507
 
@@ -513,7 +513,7 @@ Java 根据其生命周期的长短将**引用类型**又分为强引用、软�
 
 我没下 JDK9 ，不过我有 JDK11 ，所以看了下 11 doc 的确实改了。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-23a1f8e80c45e8f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112724158.png)
 
 看起来是把那段删了。所以 JDK9 之前虚引用对引用对象的GC是有影响的，9及之后的版本没影响。
 
@@ -523,18 +523,18 @@ Java 根据其生命周期的长短将**引用类型**又分为强引用、软�
 
 实现的原理是int 在自动装箱的时候会调用Integer.valueOf，进而用到了 IntegerCache。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-27c80a480a9b92c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112742081.png)
 
 没什么花头，就是判断下值是否在范围之内，如果是的话去 IntegerCache 中取。
 
 IntegerCache 在静态块中会初始化好缓存值。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-a2b8a7b561e9dde0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112757226.png)
 
 所以这里还有个面试题，就是啥 Integer 127 之内的相等，而超过 127 的就不等了，因为 127 之内的就是同一个对象，所以当然相等。
 
 不仅 Integer 有，Long 也是有的，不过范围是写死的 -128 到 127。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-4b152f204091f237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://cdn.jsdelivr.net/gh/yessimida/cdn_image/img/image-20210228112817173.png)
 
 对了 Float 和 Double 是没有滴，毕竟是小数，能存的数太多了。
