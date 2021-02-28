@@ -19,7 +19,7 @@
 
 喜欢写点东西，维护个人公众号：「yes的练级攻略」，专注分享后端技术，每周至少分享一篇原创干货。
 
-![](https://upload-images.jianshu.io/upload_images/16034279-e6ebb79b5a0b8fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://img2020.cnblogs.com/blog/2083803/202102/2083803-20210228101347640-1508000743.png)
 
 去年已经写了几十篇文章，已经汇总至[yes的练级攻略](https://github.com/yessimida/yes)，也欢迎 star！
 
