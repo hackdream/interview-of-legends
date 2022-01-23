@@ -1,7 +1,7 @@
 
 * [简历应该这样写](./docs/a-1简历应该这样写.md)
   
-* [Java 精选面试题解](./docs/b-1Java基础精选面试题解.md)
+* Java 精选面试题解
 
   - [Java 基础](./docs/b-1Java基础精选面试题解.md)
   - [Java 集合](./docs/b-2Java集合精选面试题解.md)
