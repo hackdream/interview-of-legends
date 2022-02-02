@@ -1175,7 +1175,7 @@ Netty 实现了一个 DefaultThreadFactory 工厂类来创建线程。
 
 ---
 
-TBD。
+TBC。
 
 有更多相关的Java并发面试题，可以提PR哈，有错误欢迎联系我。
 
